@@ -1,48 +1,166 @@
 
-# AI Knowledge Base Chatbot
+# 🤖 AI Knowledge Chatbot
 
-Full-stack conversational AI chatbot using React and Node.js.
+An interactive **AI-powered chatbot web application** that allows users to ask questions and receive intelligent responses in a modern chat interface.
 
-## Features
-- ChatGPT-style chat interface
-- Node.js backend API
-- OpenAI integration
-- Simple UI for asking questions
+This project demonstrates **full-stack development**, **AI API integration**, and **modern UI design** using Node.js and JavaScript.
 
-## Tech Stack
-Frontend: React  
-Backend: Node.js + Express  
-AI: Groq API
+---
 
-## How to Run
+## 🚀 Features
 
-### 1. Install Node.js
+### 💬 AI Chatbot
+- Ask questions and get intelligent AI responses.
+- Uses AI model API integration.
 
-Download Node.js from https://nodejs.org
+### 🎨 Modern Chat UI
+- Chat bubble interface
+- Animated typing indicator
+- Copy response button
+- Smooth message animations
 
-### 2. Backend Setup
+### ✨ Animated Background
+- Gradient animated background
+- Glassmorphism chat container
+- Floating particle effects
 
+### ⚡ Real-time Interaction
+- Auto-scroll messages
+- Send message with **Enter key**
+- Fast response handling
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+- Node.js
+- Express.js
+
+### AI Integration
+- Groq API (LLM)
+
+---
+
+## 📂 Project Structure
+
+```
+ai-knowledge-chatbot-project
+│
+├── backend
+│   ├── server.js
+│   ├── routes
+│   │   └── chat.js
+│   └── package.json
+│
+└── frontend
+    └── index.html
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/yourusername/ai-knowledge-chatbot.git
+cd ai-knowledge-chatbot
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```
 cd backend
 npm install
-create a file .env and add:
+```
 
-OPENAI_API_KEY=your_api_key
+---
 
-run server:
+### 3️⃣ Add API Key
 
+Open the file:
+
+```
+backend/routes/chat.js
+```
+
+Replace:
+
+```
+apiKey: "YOUR_GROQ_API_KEY"
+```
+
+with your own API key.
+
+---
+
+### 4️⃣ Start the Backend Server
+
+```
 node server.js
+```
 
 Server runs on:
+
+```
 http://localhost:5000
+```
 
-### 3. Frontend
+---
 
-Open frontend/index.html in your browser
+### 5️⃣ Run the Frontend
 
-### 4. Ask Questions
+Open the file:
 
-Type a message and the AI will respond.
+```
+frontend/index.html
+```
 
-## Resume Description
+in your browser.
 
-Built a conversational AI chatbot using React and Node.js that integrates LLM APIs to answer user queries in real time through a clean chat interface.
+---
+
+## 💡 Example Questions
+
+```
+Explain artificial intelligence
+```
+
+```
+What is machine learning?
+```
+
+```
+What are neural networks?
+```
+
+---
+
+## 🎯 Purpose of This Project
+
+This project demonstrates:
+
+- AI API integration
+- Interactive chatbot UI
+- Frontend + backend communication
+- Modern web interface design
+
+---
+
+## 👩‍💻 Author
+
+**Srishti Rautela**  
+B.Tech Computer Science Engineering  
+Interested in AI, Full-Stack Development, and Product Engineering.
+
+---
+
+
