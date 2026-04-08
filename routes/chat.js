@@ -4,7 +4,7 @@ const router = express.Router();
 const Groq = require("groq-sdk");
 
 const groq = new Groq({
-  apiKey: "your api key"
+  apiKey: "API_KEY"
 });
 
 router.post("/", async (req, res) => {
