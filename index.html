@@ -10,80 +10,45 @@
 <style>
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-margin:0;
 height:100vh;
 font-family:'Inter',sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
-
-/* animated gradient background */
-
-background:linear-gradient(-45deg,#4f46e5,#7c3aed,#6366f1,#4338ca);
-background-size:400% 400%;
-animation:gradientMove 12s ease infinite;
+background:linear-gradient(135deg,#0f172a,#020617);
+color:#e5e7eb;
 }
 
-/* gradient animation */
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* floating particles */
-
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-top:-50%;
-left:-50%;
-background-image:
-radial-gradient(circle,#ffffff22 2px,transparent 2px);
-background-size:60px 60px;
-animation:particlesMove 30s linear infinite;
-}
-
-/* chatbot container */
+/* container */
 
 .chat-container{
-width:650px;
-height:600px;
-backdrop-filter:blur(15px);
-background:rgba(255,255,255,0.85);
-border-radius:18px;
-box-shadow:0 25px 60px rgba(0,0,0,0.25);
+width:720px;
+height:640px;
+background:rgba(17,24,39,0.85);
+backdrop-filter:blur(20px);
+border-radius:20px;
 display:flex;
 flex-direction:column;
 overflow:hidden;
-position:relative;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* header */
 
 .header{
-background:linear-gradient(120deg,#bec77c,#89beed,#806e9f);
-background-size:200% 200%;
-animation:headerFlow 6s ease infinite;
-color:white;
 padding:18px;
-font-size:19px;
+font-size:18px;
 font-weight:600;
 text-align:center;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+color:white;
 letter-spacing:0.5px;
-}
-
-@keyframes headerFlow{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
 }
 
 /* chat area */
@@ -94,25 +59,14 @@ padding:20px;
 overflow-y:auto;
 display:flex;
 flex-direction:column;
-gap:12px;
-}
-
-/* custom scrollbar */
-
-.chat-box::-webkit-scrollbar{
-width:6px;
-}
-
-.chat-box::-webkit-scrollbar-thumb{
-background:#b9b9b9;
-border-radius:10px;
+gap:16px;
 }
 
 /* messages */
 
 .message{
 display:flex;
-animation:fadeIn 0.35s ease;
+animation:fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn{
@@ -137,27 +91,34 @@ justify-content:flex-start;
 /* bubbles */
 
 .bubble{
-padding:12px 16px;
-border-radius:18px;
-max-width:70%;
+padding:14px 18px;
+border-radius:16px;
+max-width:75%;
 font-size:14px;
-line-height:1.5;
-word-wrap:break-word;
-transition:transform 0.2s ease, box-shadow 0.2s ease;
+line-height:1.6;
+transition:all 0.25s ease;
 }
 
-.bubble:hover{
-transform:translateY(-2px);
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
-}
+/* user */
 
 .user .bubble{
-background:#4f46e5;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
 color:white;
+box-shadow:0 8px 20px rgba(37,99,235,0.4);
 }
 
+/* bot */
+
 .bot .bubble{
-background:#e5e7eb;
+background:#1f2937;
+border:1px solid #374151;
+color:#e5e7eb;
+}
+
+/* hover */
+
+.bubble:hover{
+transform:translateY(-2px) scale(1.01);
 }
 
 /* copy button */
@@ -165,17 +126,66 @@ background:#e5e7eb;
 .copy-btn{
 font-size:11px;
 margin-top:6px;
-cursor:pointer;
-color:#555;
 opacity:0.6;
-transition:opacity 0.2s;
+cursor:pointer;
 }
 
 .copy-btn:hover{
 opacity:1;
 }
 
-/* typing animation */
+/* input area */
+
+.input-area{
+display:flex;
+padding:14px;
+background:#020617;
+border-top:1px solid #1f2937;
+}
+
+/* input */
+
+input{
+flex:1;
+padding:12px;
+border-radius:12px;
+border:1px solid #374151;
+background:#0f172a;
+color:white;
+font-size:14px;
+outline:none;
+transition:0.2s;
+}
+
+input:focus{
+border-color:#2563eb;
+box-shadow:0 0 10px rgba(37,99,235,0.4);
+}
+
+input::placeholder{
+color:#6b7280;
+}
+
+/* button */
+
+button{
+margin-left:10px;
+padding:10px 18px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(124,58,237,0.5);
+}
+
+/* typing */
 
 .typing{
 display:flex;
@@ -183,9 +193,9 @@ gap:6px;
 }
 
 .typing span{
-width:7px;
-height:7px;
-background:#777;
+width:6px;
+height:6px;
+background:#9ca3af;
 border-radius:50%;
 animation:typing 1.4s infinite;
 }
@@ -204,50 +214,15 @@ animation-delay:0.4s;
 100%{opacity:0.2}
 }
 
-/* input area */
+/* scrollbar */
 
-.input-area{
-display:flex;
-padding:12px;
-border-top:1px solid #ddd;
-background:white;
+.chat-box::-webkit-scrollbar{
+width:6px;
 }
 
-input{
-flex:1;
-padding:11px;
+.chat-box::-webkit-scrollbar-thumb{
+background:#374151;
 border-radius:10px;
-border:1px solid #ddd;
-font-size:14px;
-outline:none;
-transition:border 0.2s;
-}
-
-input:focus{
-border-color:#6366f1;
-}
-
-/* send button */
-
-button{
-margin-left:10px;
-padding:10px 18px;
-border:none;
-border-radius:10px;
-background:linear-gradient(120deg,#4f46e5,#6366f1);
-color:white;
-font-weight:600;
-cursor:pointer;
-transition:all 0.25s ease;
-}
-
-button:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 20px rgba(79,70,229,0.5);
-}
-
-button:active{
-transform:scale(0.95);
 }
 </style>
 
@@ -256,9 +231,8 @@ transform:scale(0.95);
 <body>
 
 <div class="chat-container">
-
 <div class="header">
-🤖 AI Knowledge Chatbot
+🤖 MediTrust AI Assistant
 </div>
 
 <div id="chatBox" class="chat-box"></div>
@@ -280,31 +254,41 @@ sendMessage();
 }
 }
 
-async function sendMessage(){
+async function sendMessage() {
 
-const input=document.getElementById("messageInput");
-const message=input.value.trim();
+const input = document.getElementById("messageInput");
+const message = input.value.trim();
 
-if(message==="") return;
+if (message === "") return;
 
-addMessage(message,"user");
-input.value="";
+addMessage(message, "user");
+input.value = "";
 
 showTyping();
 
-const res=await fetch("http://localhost:5000/chat",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({message:message})
-});
+try {
 
-const data=await res.json();
+  const res = await fetch("http://localhost:5000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ message })
+  });
 
-removeTyping();
-addMessage(data.reply,"bot");
+  console.log("Response status:", res.status);
 
+  const data = await res.json();
+  console.log("Response data:", data);
+
+  removeTyping();
+  addMessage(data.reply, "bot");
+
+} catch (error) {
+  console.error(error);
+  removeTyping();
+  addMessage("Server error ❌", "bot");
+}
 }
 
 function addMessage(text,type){
