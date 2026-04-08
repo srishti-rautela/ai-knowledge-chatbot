@@ -99,6 +99,10 @@ apiKey: "YOUR_GROQ_API_KEY"
 ```
 
 with your own API key.
+also make .env file 
+```
+GROQ_API_KEY =your_api_key"
+```
 
 ---
 
